@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        *{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .3s cubic-bezier(.38,1.15,.7,1.12);
+    font-weight: normal;
+    font-family: cursive;
+}
+*::selection{
+    background:var(--green);
+    color:#fff;
+}
+.heading span.space{
+  background:none;
+}
+.btn{
+  display: inline-block;
+  margin-top: 1rem;
+  background:var(--orange);
+  color:#fff;
+  padding:.8rem 3rem;
+  border:.2rem solid var(--orange);
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+.btn:hover{
+  background:rgba(255, 165, 0,.2);
+  color:var(--orange);
+}
+header{
+  position: fixed;
+  top:0; left: 0; right:0;
+  background:#333;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:2rem 9%;
+}
+header .logo{
+  font-size: 4rem;
+  font-weight: bolder;
+  color:red;
+  text-transform: uppercase;
+}
+header .navbar a{
+  color:#fff;
+  font-size: 2rem;
+  margin:0 .8rem;
+}
+header .navbar a:hover{
+  color:red;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+html::-webkit-scrollbar{
+    width:1.3rem;
+}
+html::-webkit-scrollbar-track{
+   background:#eee;
+}
+html::-webkit-scrollbar-thumb{
+    background:black;
+}
+section{
+    min-height: 100vh;
+    padding:0 7%;
+    padding-top: 9rem;
+}
+.btn{
+    padding:.7rem 2rem;
+    font-size: 1.7rem;
+    background:#666;
+    color:#fff;
+    cursor: pointer;
+    margin-top: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+.btn:hover{
+    background:#444;
+}
+.heading{
+    text-align: center;
+    padding:1rem;
+    color:red;
+    font-size: 3.5rem;
+}
+header{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 7%;
+    background:black;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1000;
+}
+header .navbar a{
+    font-size: 2rem;
+    color:#aaa;
+    margin-left: 3rem;
+}
+header .navbar a:hover{
+    color:var(--green);
+}
+#menu{
+    font-size: 3rem;
+    color:#666;
+    cursor: pointer;
+    padding:.5rem 1rem;
+    border:.2rem solid rgba(0,0,0,.2);
+    border-radius: .5rem;
+    display: none;
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:url('https://images.pexels.com/photos/4910320/pexels-photo-4910320.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.home .content{
+    padding-left: 10rem;
+    width:75rem;
+}
+.home .content h3{
+    font-size: 4.5rem;
+    color:red;
+}
+.home .content p{
+    font-size: 2rem;
+    color:white;
+    padding:1rem 0;
+}
+.varieties{
+    background-color: black;
+}
+.varieties .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.varieties .box-container .box{
+    border:.1rem solid rgba(0,0,0,.1);
+    margin:2rem;
+    padding:1rem;
+    border-radius: .5rem;
+    background:#fff;
+    width: 30rem;
+    text-align: center;
+}
+.varieties .box-container .box img{
+    height:20rem;
+    width:20rem;
+    object-fit: cover;
+}
+.varieties .box-container .box h3{
+    font-size: 2rem;
+    color:red;
+}
+.varieties .box-container .box .stars i{
+    font-size: 2rem;
+    color:gold;
+    padding:1rem .1rem;
+}
+.varieties .box-container .box .price{
+    font-size: 2rem;
+    color:#666;
+}
+.varieties .box-container .box .price span{
+    font-size: 1.5rem;
+    color:#aaa;
+    padding-right: .5rem;
+    text-decoration: line-through;
+}
+.varieties .box-container .box .icons{
+    padding:1rem 0;
+}
+.varieties .box-container .box .icons a{
+    font-size: 1.5rem;
+    color:#666;
+    height:5rem;
+    width:5rem;
+    line-height: 5rem;
+    border:.1rem solid rgba(0,0,0,.1);
+    border-radius: .5rem;
+    margin:.5rem;
+}
+.varieties .box-container .box .icons a:hover{
+    background:#eee;
+}
+.contact{
+    background-color: black;
+    padding-bottom: 3rem;
+}
+.contact .row{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 2rem;
+    border:.1rem solid rgba(0,0,0,.1);
+    overflow: hidden;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+.contact .row .image{
+    flex:1  1 40rem;
+}
+.contact .row .image img{
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+}
+.contact .row form{
+    flex:1  1 40rem;
+    padding:2rem 4rem;
+}
+.contact .row form .inputBox{
+    padding:1rem 0;
+}
+.contact .row form .inputBox h3{
+    color:red;
+    padding:.5rem 0;
+    font-size: 2rem;
+}
+.contact .row form .inputBox input, .contact .row form .inputBox textarea{
+    width: 100%;
+    padding:1.5rem;
+    font-size: 1.5rem;
+    border:.1rem solid rgba(0,0,0,.1);
+}
+.contact .row form .inputBox textarea{
+    resize: none;
+    height: 15rem;
+}
+.footer{
+   background-color:black;
+}
+.footer .box-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footer .box-container .box{
+    margin:2rem;
+    flex:1 1 25rem;
+}
+.footer .box-container .box img{
+    height:4rem;
+}
+.footer .box-container .box p{
+    font-size: 1.5rem;
+    color:white;
+    padding: 1rem 0;
+}
+.footer .box-container .box p i{
+    padding-right: 1rem;
+    color:red;
+}
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:red;
+    padding:1rem 0;
+}
+    </style>
+<head>
+<title>Biryani Restaurant </title>
+</head>
+<body>
+    <!-- header  starts  -->
+<header>
+    <div id="menu-bar" class="fas fa-bars"></div>
+    <a href="#" class="logo">Only Biryani</a>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#varieties">Varieties</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+<!-- header ends -->
+
+<!-- home starts  -->
+<section class="home" id="home"  >
+    <div class="content">
+        <h3>Feel the rich taste of BIRYANI! </h3>
+        <p>Eat rice roasted with jhum, whether it is made casserole, or whether it is made of biryani.</p>
+        <p>Even if I confess to having done some good work for heaven, but if after eating the biryani for dessert, then I have to confess to go heaven a minute late.</p>
+        <p>Biryani contains more gravy and is cooked longer with condiments</p>
+        </div>
+    </div>
+</section>
+<!-- home section ends -->
+
+<!-- product section starts  -->
+<section class="varieties" id="varieties">
+    <h1 class="heading" color="red" >Indian Biryani Varieties</h1>
+    <div class="box-container">
+        <div class="box">
+            <img src="https://www.outlookindia.com/outlooktraveller/resizer.php?src=https://www.outlookindia.com/outlooktraveller/public/uploads/articles/explore/Kolkata-biryani.gif&w=500&h=400" alt="">
+            <h3>Kolkata biryani </h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+            </div>
+            <div class="price"> <span>₹700</span>₹499 Only</div>
+            <p>The Kolkata Biryani is a sub variant of the Lucknawi-style of biryani</p>
+        </div>
+        <div class="box">
+            <img src="https://vismaifood.com/storage/app/uploads/public/e12/7b7/127/thumb__1200_0_0_0_auto.jpg" alt="">
+            <h3>Hyderabadi Biryani</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+            </div>
+            <div class="price"> <span>₹899</span>₹599 Only</div>
+            <p>Hyderabadi Biryani involves cooking of basmatic rice and meat separately and then layering them together.</p>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/_IxDDxCVLWc/maxresdefault.jpg" alt="">
+            <h3>Bombay Biryani</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+            </div>
+            <div class="price"> <span>₹699</span>₹449 Only</div>
+            <p>Bombay biryani aka Mumbai biryani is an aromatic, spiced and tasty Mumbai style dum cooked biryani.</p>
+        </div>
+        <div class="box">
+            <img src="https://images.pexels.com/photos/7837978/pexels-photo-7837978.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+            <h3>Malabar biryani </h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+            </div>
+            <div class="price"> <span>₹599</span>₹444 Only</div>
+            <P>Malabar biryani comes from the Malabar region of Kerala.</P>
+        </div>
+        <div class="box">
+            <img src="https://images.picxy.com/cache/2020/6/21/1866c14c522c736fb2d4e5eb33381160.jpg" alt="">
+            <h3>Dindigul biryani </h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+            </div>
+            <div class="price"> <span>₹449</span> ₹309 Only </div>
+            <p>Dindigul biryani has a tangy flavor thanks to lemon and curd. This biryani usually has lamb or chicken incorporated in it.</p>
+        </div>
+        <div class="box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcdsHH9Op7dFEmVNEjZGWvPiiH7htFijhJ2X9duohClTPLxYqK" alt="">
+            <h3>Thalassery biryani</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+            </div>
+            <div class="price"> <span>₹300</span> ₹275 Only </div>
+            <p>Thalassery biryani uses roasted cashews for a nutty flavor. Thalassery biryani also uses short grain rice instead of long grain.</p>
+        </div>
+    </div>
+</section>
+<!-- product  ends -->
+
+<!-- contact  starts  -->
+<section class="contact" id="contact">
+    <h1 class="heading">contact us</h1>
+    <div class="row">
+        <div class="image">
+            <img src="https://t3.ftcdn.net/jpg/02/29/41/94/360_F_229419443_fAGXYdJrvEXXqoDnF99bQ9WS1bsDrEbN.jpg" alt="">
+        </div>
+        <form action="">
+            <div class="inputBox">
+                <h3>full name</h3>
+                <input type="text" placeholder="Enter your name">
+            </div>
+            <div class="inputBox">
+                <h3>email</h3>
+                <input type="email" placeholder="enter your email">
+            </div>
+            <div class="inputBox">
+                <h3>number</h3>
+                <input type="number" placeholder="enter your number">
+            </div>
+            <div class="inputBox">
+                <h3>message</h3>
+                <textarea name="" id="" cols="30" rows="10" placeholder="message"></textarea>
+            </div>
+            <input type="submit" value="send" class="btn">
+        </form>
+    </div>
+</section>
+<!-- contact end  -->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>History Of Biryani</h3>
+            <p>Biryani came to India from the Middle East by the time of the Mughal’s, specifically by the 10th century, with the advent of Muslim traders in Southeast Asia and Indian traders across the Middle East. This was a very delicious and different version of the dish (likely with the help of cloves) which the Mughal’s brought with them when they set off for the subcontinent.</p>
+        </div>
+        <div class="box">
+            <h3>contact details</h3>
+            <p> <i class="fas fa-phone"></i>9876543210</p>
+            <p> <i class="fas fa-envelope"></i>biryani12@gmail.com</p>
+            <p> <i class="fas fa-map-marker-alt"></i>46, Thadagam Road, RS Puram Coimbatore, Coimbatore - 641002</p>
+        </div>
+</section>
+</body>
+</html>
